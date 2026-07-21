@@ -44,11 +44,13 @@ public:
         {
             if(oldhead->val!=newhead->val)
             {
+                mid = reverseList(newhead);
                 return false;
             }
             oldhead=oldhead->next;
             newhead=newhead->next;
         }
+        mid = reverseList(newhead);
         return true;
     }
 };
