@@ -2,17 +2,12 @@ class Solution {
 public:
     int missingNumber(vector<int>& nums) {
         int n=nums.size();
-        int s=0;
-        int e=n;
-        sort(nums.begin(),nums.end());
-        while(s<e)
+        int result=n;
+        for(int i=0;i<n;i++)
         {
-            int mid=s+((e-s)/2);
-            if(nums[mid]>mid)
-             e=mid;
-            else 
-             s=mid+1;
+             result^=i;
+             result^=nums[i];
         }
-        return s;
+        return result;
     }
 };
